@@ -1,24 +1,29 @@
-#A simple perceptron
+#Trying to build a simple perceptron described in https://www.youtube.com/watch?v=ntKn5TPHHAk in python3
+
 import random
 
-def sign(n):
+def sign(n):   #Acts an activation function
 	if(n >= 0):
 		return 1
 	else:
-		return 0
+		return -1
 
 class Perceptron:
-	  def __init__(self, weights):
+	  def __init__(self, weights,inputs):
 	  	self.weights = weights
+	  	self.inputs = inputs
 	  	for i in range( 3 ):
 	  		weights.append( random.uniform(-1,1) )
-	  def think(inputs):
+	  	#print(weights)
+	  def think(self):
 	  	total = 0
 	  	for i in range( 3 ):
-	  		total += inputs[i] + weights[i]
-	  	return sign(total)
+	  		#print(weights,inputs)
+	  		total += self.inputs[i] + self.weights[i]
+	  	#print(total)
+	  	return( sign(total) )
 
-
-p = Perceptron([])
-inp = [ 2, 3, 5]
-p.think(inp)
+if __name__ == '__main__':
+	inp = [ -8, 3, 5]
+	p = Perceptron([],inp)
+	print( p.think() )
