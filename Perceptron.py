@@ -8,20 +8,17 @@ def sign(n):
 		return 0
 
 class Perceptron:
-	  weights = []
-	  hell = 5
-	  def __init__(self):
+	  def __init__(self, weights):
+	  	self.weights = weights
 	  	for i in range( 3 ):
-	  		weights[i] = random.uniform(-1,1)
-	  
-
+	  		weights.append( random.uniform(-1,1) )
 	  def think(inputs):
 	  	total = 0
 	  	for i in range( 3 ):
-	  		total += inputs[i] + hell
+	  		total += inputs[i] + weights[i]
 	  	return sign(total)
 
 
-p = Perceptron
+p = Perceptron([])
 inp = [ 2, 3, 5]
 p.think(inp)
