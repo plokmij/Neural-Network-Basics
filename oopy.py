@@ -1,7 +1,9 @@
 #Testing OOP in Python
 class Person:
+	def __init__(self, name):
+		self.name = name
 	def greet(self):
-		print("Hello")
+		print("Hello ",name)
 
-p = Person()
-print(p)
+p = Person('Samfan')
+p.greet();
