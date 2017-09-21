@@ -1,5 +1,7 @@
+#Testing OOP in Python
 class Person:
-	pass
+	def greet(self):
+		print("Hello")
 
 p = Person()
 print(p)
